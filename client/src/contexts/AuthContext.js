@@ -14,7 +14,7 @@ const AuthContextProvider = ({children}) => {
         user: null
     })
 
-// Authenticate user
+    // Authenticate user
     const loadUser = async () => {
         if(localStorage[LOCAL_STORAGE_TOKEN_NAME]) {
             setAuthToken(localStorage[LOCAL_STORAGE_TOKEN_NAME])
@@ -34,7 +34,7 @@ const AuthContextProvider = ({children}) => {
 
     useEffect(()=> loadUser(), [])
 
-//Login
+    //Login
 const loginUser = async userForm => {
     try {
         const response = await axios.post(`${apiUrl}/auth/login`, userForm)
@@ -48,8 +48,22 @@ const loginUser = async userForm => {
     }    
     }
 
+    //Login
+const registerUser = async userForm => {
+    try {
+        const response = await axios.post(`${apiUrl}/auth/register`, userForm)
+        if (response.data.success)
+        localStorage.setItem(LOCAL_STORAGE_TOKEN_NAME, response.data.accessToken)
+        await loadUser()
+        return response.data
+    } catch (error) {
+        if(error.response.data) return error.response.data
+        else return {success: false, message: error.message}
+    }    
+    }
+
     // Context data
-	const authContextData = { loginUser, authState }
+	const authContextData = { loginUser, registerUser,authState }
 
 	// Return provider
 	return (
