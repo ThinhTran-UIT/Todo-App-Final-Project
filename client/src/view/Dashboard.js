@@ -7,11 +7,15 @@ import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import SinglePost from '../components/posts/SinglePost'
+import AddPostModal from '../components/posts/AddPostModal'
+import addIcon from '../assets/plus-circle-fill.svg'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
 
 const Dashboard = () => {
     //Context
     const {authState: {user: {username}}} = useContext(AuthContext)
-    const {postState: {posts, postsLoading}, getPosts} = useContext(PostContext)
+    const {postState: {posts, postsLoading}, getPosts, setShowAddPostModal} = useContext(PostContext)
 
     //Start: Get all posts
     useEffect(() => getPosts(), [])
@@ -52,12 +56,27 @@ const Dashboard = () => {
 						</Col>
 					))}
 				</Row>
+
+        {/*Open Add Post Modal*/}
+        <OverlayTrigger
+					placement='left'
+					overlay={<Tooltip>Add a new thing to do</Tooltip>}
+				>
+        <Button className='btn-floating' onClick={setShowAddPostModal.bind(this, true)}>
+            <img src={addIcon} alt='add-post' width='60' height='60'/>
+        </Button>
+        </OverlayTrigger>
         </>
+        
         )
         
     }
-    return <>{body}</>
-        
+    return (        
+        <>
+        {body}
+        <AddPostModal/>
+        </>
+    )
 }
 
 export default Dashboard
