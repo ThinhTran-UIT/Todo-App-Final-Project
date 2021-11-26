@@ -7,10 +7,11 @@ import AuthContextProvider from "./contexts/AuthContext";
 import Dashboard from "./view/Dashboard";
 import ProtectedRoute from "./components/routing/ProtectedRoute";
 import About from "./view/About";
-
+import PostContextProvider from './contexts/PostContext'
 function App() {
   return (
-    <AuthContextProvider>
+    <AuthContextProvider>    
+    <PostContextProvider>
       <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Landing} />
@@ -20,7 +21,8 @@ function App() {
         <ProtectedRoute exact path="/about" component={About} />
 
       </Switch>
-    </BrowserRouter> 
+      </BrowserRouter> 
+    </PostContextProvider>
     </AuthContextProvider>
     
   );

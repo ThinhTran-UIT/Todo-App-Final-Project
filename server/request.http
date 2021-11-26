@@ -37,13 +37,13 @@ Content-Type: application/json
 ###
 POST http://localhost:5000/api/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk3NWRjODQ2OWNmZTU5OWZkMzk1ZTgiLCJpYXQiOjE2MzczMDk5MDJ9.vsy8fxGXrIUzrmR6zIxUXA5ns6YlRjzZyQFuYV378xE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk1MjJhM2ZmYjQ5MGRjODQzOWMxYmUiLCJpYXQiOjE2Mzc5NDk0Njl9.fddmZLF2vZ2wCIeaBFK3Mavf4RxJkH7mkDeXa_9dDjU
 
 {
-    "title": "Reactjs",
-    "description": "abcd",
+    "title": "Nodejs",
+    "description": "test",
     "url": "google.com",
-    "status": "LEARNING"
+    "status": "TO LEARN"
 }
 
 ###
