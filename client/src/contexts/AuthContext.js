@@ -48,7 +48,7 @@ const loginUser = async userForm => {
     }    
     }
 
-    //Login
+    //Register
 const registerUser = async userForm => {
     try {
         const response = await axios.post(`${apiUrl}/auth/register`, userForm)
@@ -62,8 +62,16 @@ const registerUser = async userForm => {
     }    
     }
 
+    //Logout
+    const logoutUser = () => {
+        localStorage.removeItem(LOCAL_STORAGE_TOKEN_NAME)
+        dispatch({type: 'SET_AUTH', payload: {isAuthenticated: false, user: null}})
+
+    }
+
+
     // Context data
-	const authContextData = { loginUser, registerUser,authState }
+	const authContextData = { loginUser, registerUser,logoutUser,authState }
 
 	// Return provider
 	return (

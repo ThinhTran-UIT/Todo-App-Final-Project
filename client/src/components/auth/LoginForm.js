@@ -26,9 +26,6 @@ const LoginForm = () => {
 		try {
 			const loginData = await loginUser(loginForm)
 			if (loginData.success) {
-				//history.push('/dashboard')
-			}
-			else{
 				setAlert({type: 'danger', message:loginData.message})
 				setTimeout(() => setAlert(null), 5000)
 			}
