@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Toast from 'react-bootstrap/Toast'
 import SinglePost from '../components/posts/SinglePost'
 import AddPostModal from '../components/posts/AddPostModal'
 import addIcon from '../assets/plus-circle-fill.svg'
@@ -15,7 +16,7 @@ import Tooltip from 'react-bootstrap/Tooltip'
 const Dashboard = () => {
     //Context
     const {authState: {user: {username}}} = useContext(AuthContext)
-    const {postState: {posts, postsLoading}, getPosts, setShowAddPostModal} = useContext(PostContext)
+    const {postState: {posts, postsLoading}, getPosts, setShowAddPostModal, showToast: {show, message, type}, setShowToast} = useContext(PostContext)
 
     //Start: Get all posts
     useEffect(() => getPosts(), [])
@@ -75,6 +76,14 @@ const Dashboard = () => {
         <>
         {body}
         <AddPostModal/>
+
+        {/*After post is added, show toast */}
+        <Toast show={show} style={{position: 'fixed', top: '20%', right: '10px'}} className={`bg-${type} text-white`} onClose={setShowToast.bind(this, {show: false, message: '', type: null})} delay={3000} autohide>
+            <Toast.Body>
+                <strong>{message}</strong>
+            </Toast.Body>
+        </Toast>
+
         </>
     )
 }

@@ -24,7 +24,7 @@ router.post('/',verifyToken, async(req, res) =>{
         })
         await newPost.save()
 
-        res.json({success: true, message:'Happy learning', post: newPost})
+        res.json({success: true, message:'Added Successfully', post: newPost})
     }    catch{
         console.log(error);
         res.status(500).json({success: false, message:"Internal Server Error"});
