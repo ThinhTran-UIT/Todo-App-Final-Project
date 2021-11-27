@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col'
 import Toast from 'react-bootstrap/Toast'
 import SinglePost from '../components/posts/SinglePost'
 import AddPostModal from '../components/posts/AddPostModal'
+import UpdatePostModal from '../components/posts/UpdatePostModal'
 import addIcon from '../assets/plus-circle-fill.svg'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
@@ -16,7 +17,7 @@ import Tooltip from 'react-bootstrap/Tooltip'
 const Dashboard = () => {
     //Context
     const {authState: {user: {username}}} = useContext(AuthContext)
-    const {postState: {posts, postsLoading}, getPosts, setShowAddPostModal, showToast: {show, message, type}, setShowToast} = useContext(PostContext)
+    const {postState: {post, posts, postsLoading}, getPosts, setShowAddPostModal, showToast: {show, message, type}, setShowToast} = useContext(PostContext)
 
     //Start: Get all posts
     useEffect(() => getPosts(), [])
@@ -76,7 +77,7 @@ const Dashboard = () => {
         <>
         {body}
         <AddPostModal/>
-
+        {post !== null && <UpdatePostModal />}
         {/*After post is added, show toast */}
         <Toast show={show} style={{position: 'fixed', top: '20%', right: '10px'}} className={`bg-${type} text-white`} onClose={setShowToast.bind(this, {show: false, message: '', type: null})} delay={3000} autohide>
             <Toast.Body>
