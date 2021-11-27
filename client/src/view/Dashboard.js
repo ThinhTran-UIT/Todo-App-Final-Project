@@ -41,7 +41,7 @@ const Dashboard = () => {
                     <Card.Text>
                         Click the button below to track your first skill to do
                     </Card.Text>
-                    <Button variant='primary'>ToDo</Button>
+                    <Button variant='primary' onClick={setShowAddPostModal.bind(this, true)}>ToDo</Button>
                 </Card.Body>
             </Card>
             </>
