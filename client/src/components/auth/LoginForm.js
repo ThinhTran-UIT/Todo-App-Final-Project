@@ -48,6 +48,7 @@ const LoginForm = () => {
 						onChange={onChangeLoginForm}
 					/>
 				</Form.Group>
+				<Form.Text></Form.Text>
 				<Form.Group>
 					<Form.Control
 						type='password'
@@ -58,13 +59,13 @@ const LoginForm = () => {
 						onChange={onChangeLoginForm}
 					/>
 				</Form.Group>
-				<Button variant='success' type='submit'>
+				<Button variant='warning' size='lg' type='submit'>
 					Login
 				</Button>
 			</Form>
             <p>Don't Have An Account?
             <Link to='/register'>
-                <Button variant='info' size='sm' className='ml-2'>Register</Button>
+                <Button variant='danger' size='sm' className='ml-2'>Register</Button>
             </Link>
             </p>
         </>

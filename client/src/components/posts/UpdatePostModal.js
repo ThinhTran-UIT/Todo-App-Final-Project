@@ -44,6 +44,9 @@ const UpdatePostModal = () => {
 			<Form onSubmit={onSubmit}>
 				<Modal.Body>
 					<Form.Group>
+						<Form.Text id='title-help' muted>
+							TITLE (Required)
+						</Form.Text>
 						<Form.Control
 							type='text'
 							placeholder='Title'
@@ -53,11 +56,11 @@ const UpdatePostModal = () => {
 							value={title}
 							onChange={onChangeUpdatedPostForm}
 						/>
-						<Form.Text id='title-help' muted>
-							Required
-						</Form.Text>
 					</Form.Group>
 					<Form.Group>
+						<Form.Text id='title-help' muted>
+							USERNAME (Required)
+						</Form.Text>
 						<Form.Control
 							type='text'
 							placeholder='Username'
@@ -67,6 +70,9 @@ const UpdatePostModal = () => {
 						/>
 					</Form.Group>
 					<Form.Group>
+						<Form.Text id='title-help' muted>
+							PASSWORD (Required)
+						</Form.Text>
 						<Form.Control
 							type='text'
 							placeholder='Password'
@@ -76,6 +82,9 @@ const UpdatePostModal = () => {
 						/>
 					</Form.Group>
 					<Form.Group>
+						<Form.Text id='title-help' muted>
+							URL
+						</Form.Text>
 						<Form.Control
 							type='text'
 							placeholder='Youtube Tutorial URL'
@@ -85,6 +94,9 @@ const UpdatePostModal = () => {
 						/>
 					</Form.Group>
 					<Form.Group>
+						<Form.Text id='title-help' muted>
+							STATUS
+						</Form.Text>
 						<Form.Control
 							as='select'
 							value={status}

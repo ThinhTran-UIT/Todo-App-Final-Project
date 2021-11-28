@@ -1,12 +1,11 @@
 .landing {
 	position: relative;
-	background: linear-gradient(to bottom, #f30303, #000428 );
+	background: linear-gradient(to bottom, #ffdd00, #f5f55a );
 	/*url('./assets/landing.jpg') no-repeat center center/cover;*/
 	height: 100vh;
 }
 
-.dark-overlay {
-	background-color: rgba(0, 0, 0, 0.5);
+.dark-overlay {	
 	height: 100%;
 }
 
@@ -17,18 +16,20 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-
 	width: 25%;
-	background: rgb(0, 0, 10);    
+	background: rgb(255, 255, 255);    
     color: #fff;
     padding: 5% 0;
-    margin: auto auto auto auto;
-    box-shadow: 0 0 80px 20px rgba(0, 0, 0, 0.9);
+    margin: auto;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,3);
     border-radius: 20px;
+	position: absolute;
+	top: 160px;
+	left: 650px;
 }
 
 .landing-inner form {
-	width: 30%;
+	width: 70%;
 	line-height: 5;
 	border: 100px;
 }
@@ -36,7 +37,7 @@
 .landing-inner h1,
 .landing-inner h4,
 .landing-inner p {
-	color: rgb(236, 70, 70);
+	color: #130f40;
 }
 
 .spinner-container {
