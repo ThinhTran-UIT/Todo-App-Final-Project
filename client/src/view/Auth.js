@@ -32,9 +32,8 @@ const Auth = ({ authRoute }) => {
     return (
         <div className="landing">
             <div className="dark-overlay">
-                <div className="landing-inner">
-                    <h1>ToDo App</h1>
-                    <h4>Keep Track Of What You Are Doing</h4>
+                <div className="landing-inner" >
+                    <h1>Last Password</h1>
                     {body}
                 </div>
             </div>

@@ -36,7 +36,7 @@ const LoginForm = () => {
 	}
     return (
         <>
-            <Form className = "my-4" onSubmit={login}>
+            <Form className = "my-4" onSubmit={login} >
 				<AlertMessage info={alert} />
 				<Form.Group>
 					<Form.Control

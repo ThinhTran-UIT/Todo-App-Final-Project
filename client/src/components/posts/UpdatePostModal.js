@@ -19,7 +19,7 @@ const UpdatePostModal = () => {
 
 	useEffect(() => setUpdatedPost(post), [post])
 
-	const { title, description, url, status } = updatedPost
+	const { title, usernamePost,passwordPost, url, status } = updatedPost
 
 	const onChangeUpdatedPostForm = event =>
 		setUpdatedPost({ ...updatedPost, [event.target.name]: event.target.value })
@@ -64,11 +64,19 @@ const UpdatePostModal = () => {
 					</Form.Group>
 					<Form.Group>
 						<Form.Control
-							as='textarea'
-							rows={3}
-							placeholder='Description'
-							name='description'
-							value={description}
+							type='text'
+							placeholder='Username'
+							name='usernamePost'
+							value={usernamePost}
+							onChange={onChangeUpdatedPostForm}
+						/>
+					</Form.Group>
+					<Form.Group>
+						<Form.Control
+							type='text'
+							placeholder='Password'
+							name='passwordPost'
+							value={passwordPost}
 							onChange={onChangeUpdatedPostForm}
 						/>
 					</Form.Group>
@@ -88,10 +96,9 @@ const UpdatePostModal = () => {
 							name='status'
 							onChange={onChangeUpdatedPostForm}
 						>
-							<option value='TO LEARN'>TO LEARN</option>
-							<option value='LEARNING'>LEARNING</option>
-							<option value='LEARNED'>LEARNED</option>
-						</Form.Control>
+							<option value='NORMAL'>NORMAL</option>
+							<option value='PRIVATE'>PRIVATE</option>
+							</Form.Control>
 					</Form.Group>
 				</Modal.Body>
 				<Modal.Footer>

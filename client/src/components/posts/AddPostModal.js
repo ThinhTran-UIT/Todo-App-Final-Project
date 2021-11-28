@@ -11,12 +11,13 @@ const AddPostModal = () => {
     //State
     const [newPost, setNewPost] = useState({
         title: '',
-        description:'',
+        usernamePost:'',
+        passwordPost: '',
         url:'',
-        status: 'TO LEARN'
+        status: 'NORMAL'
     })
     
-    const {title, description, url} = newPost
+    const {title, usernamePost,passwordPost, url} = newPost
 
     const onChangeNewPostForm = event => setNewPost({...newPost, [event.target.name]: event.target.value})
     const closeDialog = () => {     
@@ -31,24 +32,35 @@ const AddPostModal = () => {
 	}
 
     const resetAddPostData = () => {
-        setNewPost({title:'', description:'', url:'', status: 'TO LEARN'})  
+        setNewPost({title: '', usernamePost: '',passwordPost: '', url: '', status: 'NORMAL'})  
         setShowAddPostModal(false)
     }
 
     return(
         <Modal show={showAddPostModal} animation={false} onHide={closeDialog}>
             <Modal.Header closeButton>
-                <Modal.Title>What do you want to do?</Modal.Title>
+                <Modal.Title>Add Your Account</Modal.Title>
             </Modal.Header>
             <Form onSubmit={onSubmit}>
                 <Modal.Body>
                     <Form.Group>
-                        <Form.Control type='text' placeholder='Title' name='title' required aria-describedby='title-help' value={title} onChange={onChangeNewPostForm}/>
+                        <Form.Control type='text' placeholder='Title(*)' name='title' required aria-describedby='title-help' value={title} onChange={onChangeNewPostForm}/>
                         <Form.Text id='title-help' muted>Required</Form.Text>
                     </Form.Group>
                     <Form.Group>
-                        <Form.Control as='textarea' row={3} placeholder='Description' name='description' value={description} onChange={onChangeNewPostForm}/>
+                        <Form.Control as='textarea' placeholder='Username' name='usernamePost' value={usernamePost} onChange={onChangeNewPostForm}/>
+                        <Form.Text id='title-help' muted>Required</Form.Text>
                     </Form.Group>
+                    <Form.Group>
+                        <Form.Control as='textarea' placeholder='Password' name='passwordPost' value={passwordPost} onChange={onChangeNewPostForm}/>
+                        <Form.Text id='title-help' muted>Required</Form.Text>
+                    </Form.Group>   
+                    {/*<Form.Group>
+                        <Form.Control type='text' placeholder='Username' name='username' value={usernamePost} onChange={onChangeNewPostForm}/>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Control type='text' placeholder='Password' name='password' value={passwordPost} onChange={onChangeNewPostForm}/>
+                    </Form.Group>*/}
                     <Form.Group>
                         <Form.Control type='text' row={3} placeholder='URL' name='url' value={url} onChange={onChangeNewPostForm}/>
                     </Form.Group>

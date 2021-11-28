@@ -38,11 +38,8 @@ const Dashboard = () => {
             <Card className='text-center mx-5 my-5'>
                 <Card.Header as='h1'>Hi {username} </Card.Header>
                 <Card.Body>
-                    <Card.Title>Welcome to Todo</Card.Title>
-                    <Card.Text>
-                        Click the button below to track your first skill to do
-                    </Card.Text>
-                    <Button variant='primary' onClick={setShowAddPostModal.bind(this, true)}>ToDo</Button>
+                    <Card.Title>Welcome to Last Password</Card.Title>
+                    <Button variant='primary' onClick={setShowAddPostModal.bind(this, true)}>Add Account</Button>
                 </Card.Body>
             </Card>
             </>
