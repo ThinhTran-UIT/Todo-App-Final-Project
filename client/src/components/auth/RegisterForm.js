@@ -55,6 +55,7 @@ const RegisterForm = () => {
 						onChange={onChangeRegisterForm}
 					/>
 				</Form.Group>
+				<Form.Text></Form.Text>
 				<Form.Group>
 					<Form.Control
 						type='password'
@@ -65,6 +66,7 @@ const RegisterForm = () => {
 						onChange={onChangeRegisterForm}
 					/>
 				</Form.Group>
+				<Form.Text></Form.Text>
                 <Form.Group>
 					<Form.Control
 						type='password'
@@ -75,7 +77,7 @@ const RegisterForm = () => {
 						onChange={onChangeRegisterForm}						
 					/>
 				</Form.Group>
-				<Button variant='success' type='submit'>
+				<Button variant='warning' type='submit'>
 					Register
 				</Button>
 			</Form>
