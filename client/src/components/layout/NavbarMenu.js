@@ -1,7 +1,7 @@
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import learnItLogo from '../../assets/logo.svg'
-import logoutIcon from '../../assets/logout.svg'
+import learnItLogo from '../../assets/logo.ico'
+import logoutIcon from '../../assets/door-closed.svg'
 import Button from 'react-bootstrap/Button'
 import {Link} from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
@@ -15,27 +15,27 @@ const NavbarMenu = () => {
         const logout= () => logoutUser()
     return (
         
-            <Navbar expand='lg' bg='primary' variant='dark' className='shadow'>
-                <Navbar.Brand className='font-weight-bolder text-white'>
+            <Navbar expand='lg' bg='light' variant='dark' className='shadow'>
+                <Navbar.Brand className='font-weight-bolder text-warning'>
                     <img src={learnItLogo} alt='learnItLogo' width='32' className='mr-2' />
-                    ToDo
+                    Last Password
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse id='basic-navbar-nav'>
                     <Nav className='mr-auto'>
-                        <Nav.Link className='font-weight-bolder text-white' to='/dashboard' as={Link}>
+                        <Nav.Link className='font-weight-bolder text-warning' to='/dashboard' as={Link}>
                             Dashboard
                         </Nav.Link>
-                        <Nav.Link className='font-weight-bolder text-white' to='/about' as={Link}>
+                        <Nav.Link className='font-weight-bolder text-warning' to='/about' as={Link}>
                             About
                         </Nav.Link>
                     </Nav>
 
                     <Nav>
-                        <Nav.Link className='font-weight-bolder text-while' disabled>
+                        <Nav.Link className='font-weight-bolder text-warning' disabled>
                             Welcome {username}
                         </Nav.Link>
-                        <Button variant='secondary' className='font-weigth-bolder text-white' onClick={logout}>
+                        <Button variant='warning' className='font-weigth-bolder text-dark' color='yellow' onClick={logout}>
                             <img src={logoutIcon} alt='logoutIcon' width='32' weight='32' className='mr-2' />
                             Logout                            
                         </Button>

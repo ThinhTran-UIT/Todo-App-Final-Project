@@ -44,30 +44,25 @@ const AddPostModal = () => {
             <Form onSubmit={onSubmit}>
                 <Modal.Body>
                     <Form.Group>
-                        <Form.Control type='text' placeholder='Title(*)' name='title' required aria-describedby='title-help' value={title} onChange={onChangeNewPostForm}/>
                         <Form.Text id='title-help' muted>Required</Form.Text>
+                        <Form.Control type='text' placeholder='Title' name='title' required aria-describedby='title-help' value={title} onChange={onChangeNewPostForm}/>
                     </Form.Group>
                     <Form.Group>
-                        <Form.Control as='textarea' placeholder='Username' name='usernamePost' value={usernamePost} onChange={onChangeNewPostForm}/>
                         <Form.Text id='title-help' muted>Required</Form.Text>
+                        <Form.Control type='text' placeholder='Username' name='usernamePost' value={usernamePost} onChange={onChangeNewPostForm}/>
                     </Form.Group>
                     <Form.Group>
-                        <Form.Control as='textarea' placeholder='Password' name='passwordPost' value={passwordPost} onChange={onChangeNewPostForm}/>
                         <Form.Text id='title-help' muted>Required</Form.Text>
+                        <Form.Control type='text' placeholder='Password' name='passwordPost' value={passwordPost} onChange={onChangeNewPostForm}/>
                     </Form.Group>   
-                    {/*<Form.Group>
-                        <Form.Control type='text' placeholder='Username' name='username' value={usernamePost} onChange={onChangeNewPostForm}/>
-                    </Form.Group>
                     <Form.Group>
-                        <Form.Control type='text' placeholder='Password' name='password' value={passwordPost} onChange={onChangeNewPostForm}/>
-                    </Form.Group>*/}
-                    <Form.Group>
+                        <Form.Text></Form.Text>
                         <Form.Control type='text' row={3} placeholder='URL' name='url' value={url} onChange={onChangeNewPostForm}/>
                     </Form.Group>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant='secondary' onClick={closeDialog}>Cancel</Button>
-                    <Button variant='primary' type='submit'>Save</Button>
+                    <Button variant='danger' onClick={closeDialog}>Cancel</Button>
+                    <Button variant='warning' type='submit'>Save</Button>
                 </Modal.Footer>
             </Form>
         </Modal>

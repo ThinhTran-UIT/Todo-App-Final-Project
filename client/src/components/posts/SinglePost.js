@@ -16,7 +16,7 @@ const SinglePost = ({post:{_id, status, title, usernamePost, passwordPost, url}}
 				: 'warning'
 		}
 	>
-		<Card.Body>
+		<Card.Body className='bg-warning rounded'>
 			<Card.Title>
 				<Row>
 					<Col>
