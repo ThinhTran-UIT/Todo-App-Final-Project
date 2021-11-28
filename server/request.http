@@ -37,18 +37,19 @@ Content-Type: application/json
 ###
 POST http://localhost:5000/api/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk1MjJhM2ZmYjQ5MGRjODQzOWMxYmUiLCJpYXQiOjE2Mzc5NDk0Njl9.fddmZLF2vZ2wCIeaBFK3Mavf4RxJkH7mkDeXa_9dDjU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk3NWRjODQ2OWNmZTU5OWZkMzk1ZTgiLCJpYXQiOjE2MzgwODc3NzJ9.glqU__9IwsD2bfTFPBPMm1io9c90RNrQacsk7gWKmiU
 
 {
-    "title": "Nodejs",
-    "description": "test",
+    "title": "Reactjs",
+    "usernamePost": "test",
+    "passwordPost": "123456",
     "url": "google.com",
-    "status": "TO LEARN"
+    "status": "NORMAL"
 }
 
 ###
 GET http://localhost:5000/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk1MjJhM2ZmYjQ5MGRjODQzOWMxYmUiLCJpYXQiOjE2MzczMTExODV9.6joxIm1i6rxcbCFobqXID-5yHh8arZCSUVUB8Qe-fqQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk3NWRjODQ2OWNmZTU5OWZkMzk1ZTgiLCJpYXQiOjE2MzgwODc3NzJ9.glqU__9IwsD2bfTFPBPMm1io9c90RNrQacsk7gWKmiU
 
 
 ###
@@ -56,17 +57,18 @@ GET http://localhost:5000/api/posts
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk3NWRjODQ2OWNmZTU5OWZkMzk1ZTgiLCJpYXQiOjE2MzczMTU5MTZ9.--eXt1pyxEHSN6-nqt12y9zrBBaFYcB9hId606xIrBw
 
 ###
-PUT http://localhost:5000/api/posts/61975bda771d251585352b7c
+PUT http://localhost:5000/api/posts/61a33c75ca24ff81fb251b30
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk3NWRjODQ2OWNmZTU5OWZkMzk1ZTgiLCJpYXQiOjE2MzczMTU4MzF9.NaSm8-HTOS1rqIdqUhP0ULhoF6LJaz4_PtzraFz7J8U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk3NWRjODQ2OWNmZTU5OWZkMzk1ZTgiLCJpYXQiOjE2MzgwODc3NzJ9.glqU__9IwsD2bfTFPBPMm1io9c90RNrQacsk7gWKmiU
 
 {
-    "title": "Reactjs Update",
-    "description": "reactjs desc",
-    "url": "youtube.com",
-    "status": "LEARNED"
+    "title": "NodejsED",
+    "usernamePost": "test",
+    "passwordPost": "123456",
+    "url": "google.com",
+    "status": "NORMAL"
 }
 
 ###
-DELETE  http://localhost:5000/api/posts/61975de3469cfe599fd395eb
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk3NWRjODQ2OWNmZTU5OWZkMzk1ZTgiLCJpYXQiOjE2MzczMTU5MTZ9.--eXt1pyxEHSN6-nqt12y9zrBBaFYcB9hId606xIrBw
+DELETE  http://localhost:5000/api/posts/61a33e30ca24ff81fb251b3f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk3NWRjODQ2OWNmZTU5OWZkMzk1ZTgiLCJpYXQiOjE2MzgwODc3NzJ9.glqU__9IwsD2bfTFPBPMm1io9c90RNrQacsk7gWKmiU

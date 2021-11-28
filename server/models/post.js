@@ -5,15 +5,20 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
-    description:{
-        type: String
+    usernamePost:{
+        type: String,
+        required: true
+    },
+    passwordPost:{
+        type: String,
+        required: true
     },
     url:{
         type: String
     },
     status:{
         type: String,
-        enum: ['TO LEARN', 'LEARNING', 'LEARNED']
+        enum: ['NORMAL', 'PRIVATE']
     },
     user:{
         type: Schema.Types.ObjectId,

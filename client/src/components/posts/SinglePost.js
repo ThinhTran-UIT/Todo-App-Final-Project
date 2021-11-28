@@ -27,7 +27,7 @@ const SinglePost = ({post:{_id, status, title, description, url}}) => (
                     </Col>
                 </Row>
             </Card.Title>
-            <Card.Text>{description}</Card.Text>
+            <Card.Text>Username: {description}</Card.Text>
         </Card.Body>
 
     </Card>

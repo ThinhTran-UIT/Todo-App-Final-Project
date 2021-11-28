@@ -9,17 +9,18 @@ const Post = require("../models/post")
 // @access Private
 
 router.post('/',verifyToken, async(req, res) =>{
-    const{title, description, url, status} = req.body;
+    const{title, usernamePost, passwordPost, url, status} = req.body;
 
     //Simple Validation
     if(!title)
-    return res.status(400).json({success: false, message:'Title is required!'})
+    return res.status(400).json({success: false, message:'Check some fields are required!'})
     try{
         const newPost = new Post({
             title, 
-            description, 
+            usernamePost,
+            passwordPost, 
             url: (url.startsWith('https://')) ? url: `https://${url}`,
-            status: status || 'TO LEARN',
+            status: status || 'NORMAL',
             user: req.userId
         })
         await newPost.save()
@@ -52,7 +53,7 @@ router.get('/', verifyToken, async(req,res)=> {
 // @desc Update post
 // @access Private
 router.put('/:id', verifyToken, async(req,res)=> {
-    const {title, description, url, status} = req.body
+    const {title, usernamePost, passwordPost, url, status} = req.body
 
     //Simple validation
     if(!title)
@@ -61,9 +62,10 @@ router.put('/:id', verifyToken, async(req,res)=> {
     try {
         let updatedPost ={
             title,
-            description: description || '',
+            usernamePost: usernamePost || '',
+            passwordPost: passwordPost || '',
             url: (url.startsWith('https://') ? url: `https://${url}`) || '',
-            status: status || 'TO LEARN'
+            status: status || 'NORMAL'
             //user: req.userId
         }
 
@@ -75,7 +77,7 @@ router.put('/:id', verifyToken, async(req,res)=> {
         if(!updatedPost)
         return res.status(401).json({success: false, message:'Post not found or user not authorised'})
 
-        res.json({success: true, message: 'Well Done!', post:updatedPost})
+        res.json({success: true, message: 'Updated Successfully!', post:updatedPost})
     } catch (error) {
         console.log(error);
         res.status(500).json({success: false, message:'Internal Server Error'})
@@ -97,7 +99,7 @@ router.delete('/:id', verifyToken, async(req,res) =>{
         if(!deletedPost)
         return res.status(401).json({success: false, message:'Post not found or user not authorised'})
 
-        res.json({success: true, message:'Well Done!', post:deletedPost})
+        res.json({success: true, message:'Deleted Successfully!', post:deletedPost})
     } catch (error) {
         console.log(error);
         res.status(500).json({success: false, message:'Internal Server Error'})
