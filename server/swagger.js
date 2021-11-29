@@ -5,13 +5,13 @@ module.exports = (app) => {
     const swaggerOptions = {
         swaggerDefinition: {
         info: {
-            title: "User API",
+            title: "LastPassword Website API",
             version: "1.0.0",
             description:
-            "This is an APIs about Authorization.<br /> Made by <b>18521450 - TranDucThinh</b>",
+            "This is an APIs about LastPassword Website.<br /> Made by <b>18521450 - TranDucThinh</b>",
         },
     },
-        apis: ["./docs/docsAuth.js"],
+        apis: ["./docs/documents.js"],
     };
 
     // Options for customize Swagger Page
@@ -26,3 +26,4 @@ module.exports = (app) => {
     // Render Swagger Page
     app.use("/api/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs, options));
 };
+

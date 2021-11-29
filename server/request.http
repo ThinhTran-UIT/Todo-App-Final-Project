@@ -7,12 +7,12 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:5000/api/auth/register
+POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-    "username": "ST",
-    "password": "1304440183"
+    "username": "long",
+    "password": "12345"
 }
 
 ###
@@ -49,8 +49,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk3N
 
 ###
 GET http://localhost:5000/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk3NWRjODQ2OWNmZTU5OWZkMzk1ZTgiLCJpYXQiOjE2MzgwODc3NzJ9.glqU__9IwsD2bfTFPBPMm1io9c90RNrQacsk7gWKmiU
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk1MjJhM2ZmYjQ5MGRjODQzOWMxYmUiLCJpYXQiOjE2MzgxOTE0MjB9.bTRX4VhTjiCxEoQPFUOOF3ucpMn1ISegUHKARwg9W6E
 
 ###
 GET http://localhost:5000/api/posts
@@ -70,5 +69,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk3N
 }
 
 ###
-DELETE  http://localhost:5000/api/posts/61a33e30ca24ff81fb251b3f
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk3NWRjODQ2OWNmZTU5OWZkMzk1ZTgiLCJpYXQiOjE2MzgwODc3NzJ9.glqU__9IwsD2bfTFPBPMm1io9c90RNrQacsk7gWKmiU
+DELETE  http://localhost:5000/api/posts/61a4d303434fdc4b85d16008
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk1MjJhM2ZmYjQ5MGRjODQzOWMxYmUiLCJpYXQiOjE2MzgxOTE0MjB9.bTRX4VhTjiCxEoQPFUOOF3ucpMn1ISegUHKARwg9W6E
