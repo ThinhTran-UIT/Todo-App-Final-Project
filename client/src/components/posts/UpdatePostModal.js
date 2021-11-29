@@ -113,7 +113,7 @@ const UpdatePostModal = () => {
 						Cancel
 					</Button>
 					<Button variant='primary' type='submit'>
-						LearnIt!
+						Update
 					</Button>
 				</Modal.Footer>
 			</Form>
