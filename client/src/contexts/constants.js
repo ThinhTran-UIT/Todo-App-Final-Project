@@ -1,4 +1,4 @@
-export const apiUrl = process.env.NODE_ENV !=='production' ? 'http://localhost:5000/api' : 'somedeployURL'
+export const apiUrl = process.env.NODE_ENV !=='production' ? 'http://localhost:5000/api' : 'https://last-password.herokuapp.com/api'
 
 export const LOCAL_STORAGE_TOKEN_NAME = 'STORAGED'
 export const POSTS_LOADED_SUCCESS = 'POSTS_LOADED_SUCCESS'
